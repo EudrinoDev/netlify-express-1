@@ -58,6 +58,7 @@
         const videosFragment = document.createDocumentFragment();
         for (const item of history) videosFragment.appendChild(getItem(item));
         $('.items').appendChild(videosFragment);
+        axios.defaults.baseURL = "https://zingy-babka-d6a8f7.netlify.app/.netlify/functions/server";
         axios.get('/');
         const audioElement = new Audio() || $('audio');
         audioElement.onended = function () {
