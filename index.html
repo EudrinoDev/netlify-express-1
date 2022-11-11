@@ -106,11 +106,11 @@
                     localStorage.setItem('items', JSON.stringify(history));
                 }
                 $('.progress-container').classList.add('loading');
-                audioElement.src = axios.defaults.baseURL + "/stream/?url=" + url;
-                audioElement.play();
                 axios.get('/download/?url=' + url).then(function ({ data }) {
                     const videosFragment = document.createDocumentFragment();
                     for (const video of data.related) videosFragment.appendChild(getItem(video));
+                    audioElement.src = data.stream;
+                    audioElement.play();
                     $('.items').innerHTML = '';
                     $('.items').appendChild(videosFragment);
                     $('.progress-container').classList.remove('loading');
