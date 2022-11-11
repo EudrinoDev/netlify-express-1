@@ -128,7 +128,7 @@ router
   })
   .get("/stream/", async ({ query }, response) => {
     ytdl(query.url, {
-      quality: "highestaudio"
+      quality: "lowestaudio"
     }).pipe(response)
   })
   .get('/download/', async ({ query }, response) => {
