@@ -114,7 +114,7 @@ const ytdl =require( "ytdl");
 const requestPromise =require( "request-promise");
 const prettyMs =require( "pretty-ms");
 const router = express.Router();
-router.
+router
 .use(cors({
     origin: '*',
   }))
